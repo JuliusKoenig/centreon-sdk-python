@@ -3,7 +3,8 @@
 from centreonapi.webservice.configuration.host import *
 from centreonapi.webservice.configuration.poller import Poller
 from centreonapi.webservice.configuration.hostgroups import Hostgroups
-from centreonapi.webservice.configuration.templates import Templates
+from centreonapi.webservice.configuration.hosttemplates import Hosttemplates
+from centreonapi.webservice.configuration.servicetemplates import Servicetemplates
 from centreonapi.webservice.configuration.commands import Commands
 
 class Centreon(object):
@@ -18,7 +19,8 @@ class Centreon(object):
         self.host = Host()
         self.poller = Poller()
         self.hostgroups = Hostgroups()
-        self.templates = Templates()
+        self.hosttemplates = Hosttemplates()
+        self.servicetemplates = Servicetemplates()
         self.commands = Commands()
 
         self.availableHost = None
@@ -32,7 +34,7 @@ class Centreon(object):
             self.availableHost = self.host.list()
             self.availableHostGroups = self.hostgroups.list()
             self.availablePoller = self.poller.list()
-            self.availableHostTemplates = self.templates.list()
+            self.availableHostTemplates = self.hosttemplates.list()
             self.availableCommands = self.commands.list()
         except Exception as exc:
             raise exc
