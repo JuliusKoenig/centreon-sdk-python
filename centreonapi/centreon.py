@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from centreonapi.webservice.configuration.host import *
+from centreonapi.webservice.configuration.service import Service
 from centreonapi.webservice.configuration.poller import Poller
 from centreonapi.webservice.configuration.hostgroups import Hostgroups
 from centreonapi.webservice.configuration.hosttemplates import Hosttemplates
@@ -17,6 +18,7 @@ class Centreon(object):
         )
 
         self.host = Host()
+        self.service = Service()
         self.poller = Poller()
         self.hostgroups = Hostgroups()
         self.hosttemplates = Hosttemplates()

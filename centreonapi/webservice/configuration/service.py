@@ -36,8 +36,8 @@ class Service(object):
     def getmacro(self, hostname, servicename):
         return self.webservice.call_clapi('getmacro', 'SERVICE', [hostname,servicename])
 
-    def setmacro(self, hostname, servicename, name, value, description):
-        values = [hostname, servicename, name, value, description]
+    def setmacro(self, hostname, servicename, name, value):
+        values = [hostname, servicename, name, value]
         return self.webservice.call_clapi('setmacro', 'SERVICE', values)
 
     def delmacro(self, hostname, servicename, name):
